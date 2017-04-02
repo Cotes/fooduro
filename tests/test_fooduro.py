@@ -4,9 +4,6 @@ from fooduro.fooduro import Fooduro
 
 class FooduroTest(unittest.TestCase):
 
-    def test_is_working(self):
-        self.assertEqual(1, 1)
-
     def test_when_initialization_load_food(self):
         fooduro = Fooduro()
         fooduro.load("dish", "another")
