@@ -8,8 +8,8 @@ class FooduroTest(unittest.TestCase):
 
     def test_when_initialization_load_food(self):
         fooduro = Fooduro()
-        fooduro.load("dish")
-        self.assertEqual("dish", fooduro.dishes)
+        fooduro.load("dish", "another")
+        self.assertEqual(["dish", "another"], fooduro.dishes)
 
     def test_when_food_is_consumed_counter_is_increased(self):
         fooduro = Fooduro()
