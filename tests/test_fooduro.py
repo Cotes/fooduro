@@ -1,6 +1,7 @@
 import unittest
 from fooduro.fooduro import Fooduro
 
+
 class FooduroTest(unittest.TestCase):
 
     def test_is_working(self):
