@@ -1,4 +1,4 @@
-class Fooduro:
+class WeekFood:
 
     def load(self, *dishes):
         self.dishes = list(dishes)

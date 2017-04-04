@@ -1,11 +1,11 @@
 import unittest
-from fooduro.fooduro import Fooduro
+from weekfood.weekfood import WeekFood
 
 
 class FooduroTest(unittest.TestCase):
 
     def setUp(self):
-        self.weekFood = Fooduro()
+        self.weekFood = WeekFood()
 
     def test_when_initialization_load_food(self):
         self.weekFood.load("aDish", "anotherDish")
