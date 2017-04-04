@@ -8,9 +8,18 @@ class FooduroTest(unittest.TestCase):
         self.weekFood = WeekFood()
 
     def test_when_initialization_load_food(self):
-        self.weekFood.load("aDish", "anotherDish")
+        self.weekFood.load(["aDish", "anotherDish"])
         self.assertEqual(["aDish", "anotherDish"], self.weekFood.dishes)
 
     def test_when_we_ask_for_a_dish_should_serve_one(self):
-        self.weekFood.load("aDish")
+        self.weekFood.load(["aDish"])
         self.assertIn(self.weekFood.whats_to_eat(), ["aDish"])
+
+    # def test_asking_for_two_dishes_should_not_repeat_them_if_possible(self):
+    #     dishes = ["aDish", "anotherDish"]
+    #     self.weekFood.load(dishes)
+    #     firstDish = self.weekFood.whats_to_eat()
+    #     self.assertIn(firstDish, dishes)
+    #     dishes.remove(firstDish)
+    #     print(dishes)
+    #     self.assertIn(self.weekFood.whats_to_eat(), dishes)
