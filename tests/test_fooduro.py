@@ -2,7 +2,7 @@ import unittest
 from weekfood.weekfood import WeekFood
 
 
-class FooduroTest(unittest.TestCase):
+class WeekFoodTest(unittest.TestCase):
 
     def setUp(self):
         self.weekFood = WeekFood()
