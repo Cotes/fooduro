@@ -8,4 +8,4 @@ class WeekFood:
 
     def whats_to_eat(self):
         self.calls += 1
-        return self.dishes[self.calls]
+        return self.dishes[self.calls % len(self.dishes)]

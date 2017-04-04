@@ -20,3 +20,10 @@ class FooduroTest(unittest.TestCase):
         self.assertIn(first_dish, self.dishes)
         self.dishes.remove(first_dish)
         self.assertIn(self.weekFood.whats_to_eat(), self.dishes)
+
+    def test_asking_for_three_dishes_and_its_has_only_2_available(self):
+        first_dish = self.weekFood.whats_to_eat()
+        second_dish = self.weekFood.whats_to_eat()
+        third_dish = self.weekFood.whats_to_eat()
+        self.assertNotEqual(first_dish, second_dish)
+        self.assertIn(third_dish, self.dishes)
