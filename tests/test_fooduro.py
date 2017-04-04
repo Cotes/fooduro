@@ -15,11 +15,10 @@ class FooduroTest(unittest.TestCase):
         self.weekFood.load(["aDish"])
         self.assertIn(self.weekFood.whats_to_eat(), ["aDish"])
 
-    # def test_asking_for_two_dishes_should_not_repeat_them_if_possible(self):
-    #     dishes = ["aDish", "anotherDish"]
-    #     self.weekFood.load(dishes)
-    #     firstDish = self.weekFood.whats_to_eat()
-    #     self.assertIn(firstDish, dishes)
-    #     dishes.remove(firstDish)
-    #     print(dishes)
-    #     self.assertIn(self.weekFood.whats_to_eat(), dishes)
+    def test_asking_for_two_dishes_should_not_repeat_them_if_possible(self):
+        dishes = ["aDish", "anotherDish"]
+        self.weekFood.load(list(dishes))
+        first_dish = self.weekFood.whats_to_eat()
+        self.assertIn(first_dish, dishes)
+        dishes.remove(first_dish)
+        self.assertIn(self.weekFood.whats_to_eat(), dishes)

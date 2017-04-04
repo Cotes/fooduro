@@ -1,7 +1,11 @@
 class WeekFood:
 
+    def __init__(self):
+        self.calls = -1
+
     def load(self, dishes):
         self.dishes = dishes
 
     def whats_to_eat(self):
-        return self.dishes[0]
+        self.calls += 1
+        return self.dishes[self.calls]
