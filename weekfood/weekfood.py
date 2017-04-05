@@ -14,8 +14,11 @@ class WeekFood:
         self.next_dish += 1
         if self.next_dish >= len(self.dishes):
             self.next_dish = 0
-            old_dishes = list(self.dishes)
-            random.shuffle(self.dishes)
-            while old_dishes == self.dishes:
-                random.shuffle(self.dishes)
+            self.shuffle_dishes()
         return self.dishes[self.next_dish]
+
+    def shuffle_dishes(self):
+        old_dishes = list(self.dishes)
+        random.shuffle(self.dishes)
+        while old_dishes == self.dishes:
+            random.shuffle(self.dishes)
