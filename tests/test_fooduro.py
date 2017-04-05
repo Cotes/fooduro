@@ -17,20 +17,20 @@ class WeekFoodTest(unittest.TestCase):
 
     def test_when_we_ask_for_a_dish_should_serve_one(self):
         self.load_dishes(1)
-        self.assertIn(self.weekFood.whats_to_eat(), ["aDish"])
+        self.assertIn(self.weekFood.what_to_eat(), ["aDish"])
 
     def test_asking_for_two_dishes_should_not_repeat_them_if_possible(self):
         self.load_dishes(2)
-        first_dish = self.weekFood.whats_to_eat()
+        first_dish = self.weekFood.what_to_eat()
         self.assertIn(first_dish, self.dishes)
         self.dishes.remove(first_dish)
-        self.assertIn(self.weekFood.whats_to_eat(), self.dishes)
+        self.assertIn(self.weekFood.what_to_eat(), self.dishes)
 
     def test_asking_for_three_dishes_and_it_has_only_2_available(self):
         self.load_dishes(2)
-        first_dish = self.weekFood.whats_to_eat()
-        second_dish = self.weekFood.whats_to_eat()
-        third_dish = self.weekFood.whats_to_eat()
+        first_dish = self.weekFood.what_to_eat()
+        second_dish = self.weekFood.what_to_eat()
+        third_dish = self.weekFood.what_to_eat()
         self.assertNotEqual(first_dish, second_dish)
         self.assertIn(third_dish, self.dishes)
 
@@ -44,5 +44,5 @@ class WeekFoodTest(unittest.TestCase):
     def get_dishes_for_cycle(self, num_dishes):
         second_cycle = []
         for _ in range(num_dishes):
-            second_cycle.append(self.weekFood.whats_to_eat())
+            second_cycle.append(self.weekFood.what_to_eat())
         return second_cycle
