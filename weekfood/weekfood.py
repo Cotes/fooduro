@@ -21,7 +21,7 @@ class WeekFood:
         if len(self.dishes) in [1, 2]:
             return self.dishes
         new_dishes = self.shuffle(list(self.dishes))
-        while new_dishes == self.dishes:
+        while new_dishes == self.dishes or new_dishes[0] == self.dishes[-1]:
             new_dishes = self.shuffle(new_dishes)
         return new_dishes
 
