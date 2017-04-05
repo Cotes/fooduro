@@ -34,3 +34,12 @@ class WeekFoodTest(unittest.TestCase):
         self.assertNotEqual(first_dish, second_dish)
         self.assertIn(third_dish, self.dishes)
 
+    def test_avoid_cycles(self):
+        self.load_dishes(3)
+        first_cycle = []
+        for _ in range(3):
+            first_cycle.append(self.weekFood.whats_to_eat())
+        second_cycle = []
+        for _ in range(3):
+            second_cycle.append(self.weekFood.whats_to_eat())
+        self.assertNotEqual(first_cycle, second_cycle)
