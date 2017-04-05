@@ -21,6 +21,9 @@ class WeekFood:
         if len(self.dishes) == 1:
             return
 
+        if len(self.dishes) == 2:
+            return
+
         old_dishes = list(self.dishes)
         random.shuffle(self.dishes)
         while old_dishes == self.dishes:
