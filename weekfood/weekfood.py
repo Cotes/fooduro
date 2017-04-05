@@ -20,8 +20,11 @@ class WeekFood:
     def shuffle_dishes(self):
         if len(self.dishes) in [1, 2]:
             return self.dishes
-        new_dishes = list(self.dishes)
-        random.shuffle(new_dishes)
+        new_dishes = self.shuffle(list(self.dishes))
         while new_dishes == self.dishes:
-            random.shuffle(new_dishes)
+            new_dishes = self.shuffle(new_dishes)
         return new_dishes
+
+    def shuffle(self, dishes):
+        random.shuffle(dishes)
+        return dishes
