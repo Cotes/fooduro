@@ -18,10 +18,7 @@ class WeekFood:
         return self.dishes[self.next_dish]
 
     def shuffle_dishes(self):
-        if len(self.dishes) == 1:
-            return
-
-        if len(self.dishes) == 2:
+        if len(self.dishes) in [1, 2]:
             return
 
         old_dishes = list(self.dishes)
