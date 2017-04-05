@@ -14,7 +14,8 @@ class WeekFood:
         self.next_dish += 1
         if self.next_dish >= len(self.dishes):
             self.next_dish = 0
-            self.shuffle_dishes()
+            if len(self.dishes) > 1:
+                self.shuffle_dishes()
         return self.dishes[self.next_dish]
 
     def shuffle_dishes(self):

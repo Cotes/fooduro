@@ -41,6 +41,17 @@ class WeekFoodTest(unittest.TestCase):
         second_cycle = self.get_dishes_for_cycle(num_dishes)
         self.assertNotEqual(first_cycle, second_cycle)
 
+    def test_when_there_is_only_one_dish_should_always_return_it(self):
+        self.load_dishes(1)
+        self.assertEqual(self.weekFood.what_to_eat(), self.weekFood.what_to_eat())
+
+    # def test_avoid_repetitions(self):
+    #     num_dishes = 2
+    #     self.load_dishes(num_dishes)
+    #     first_cycle = self.get_dishes_for_cycle(num_dishes)
+    #     second_cycle = self.get_dishes_for_cycle(num_dishes)
+    #     self.assertNotEqual(first_cycle[1], second_cycle[0])
+
     def get_dishes_for_cycle(self, num_dishes):
         second_cycle = []
         for _ in range(num_dishes):
