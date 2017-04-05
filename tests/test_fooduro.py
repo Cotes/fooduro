@@ -53,14 +53,14 @@ class WeekFoodTest(unittest.TestCase):
         second_cycle = self.get_dishes_for_cycle(num_dishes)
         self.assertNotEqual(first_cycle[1], second_cycle[0])
 
-    # def test_avoid_repetitions_with_more_than_two_dishes(self):
-    #     num_dishes = 3
-    #     self.load_dishes(num_dishes)
-    #     first_cycle = self.get_dishes_for_cycle(num_dishes)
-    #     self.weekFood.shuffle = Mock()
-    #     self.weekFood.shuffle.side_effect = [["moreDish", "aDish", "anotherDish"], ["anotherDish", "moreDish", "aDish"]]
-    #     second_cycle = self.get_dishes_for_cycle(num_dishes)
-    #     self.assertNotEqual(first_cycle[2], second_cycle[0])
+    def test_avoid_repetitions_with_more_than_two_dishes(self):
+        num_dishes = 3
+        self.load_dishes(num_dishes)
+        first_cycle = self.get_dishes_for_cycle(num_dishes)
+        self.weekFood.shuffle = Mock()
+        self.weekFood.shuffle.side_effect = [["moreDish", "aDish", "anotherDish"], ["anotherDish", "moreDish", "aDish"]]
+        second_cycle = self.get_dishes_for_cycle(num_dishes)
+        self.assertNotEqual(first_cycle[2], second_cycle[0])
 
     def get_dishes_for_cycle(self, num_dishes):
         second_cycle = []
